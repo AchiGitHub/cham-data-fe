@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const Server = axios.create({
-  baseURL: "http://localhost:1337/api/v1/playercard",
+  baseURL: "https://pwa-be.herokuapp.com/api/v1/playercard",
 });
 
 export default Server;

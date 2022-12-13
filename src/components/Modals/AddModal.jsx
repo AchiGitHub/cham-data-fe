@@ -5,7 +5,7 @@ import Modal from "styled-react-modal";
 import { createCard } from "../../api/PlayerCards";
 import { PlayerContext } from "../../context/Players";
 import { ButtonWrapper } from "../Common/ActionButton/styles";
-import { InputGroup, InputRow } from "./styles";
+import { Input, InputGroup, InputRow } from "./styles";
 
 const AddModal = ({ modalOpen, setModalOpen }) => {
 
@@ -54,7 +54,7 @@ const AddModal = ({ modalOpen, setModalOpen }) => {
               <InputRow>
                 <label>Swap Reason</label>
               </InputRow>
-              <input
+              <Input
                 name="swapReason"
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -65,7 +65,7 @@ const AddModal = ({ modalOpen, setModalOpen }) => {
               <InputRow>
                 <label>Swap Time</label>
               </InputRow>
-              <input
+              <Input
                 name="swapTime"
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -76,27 +76,28 @@ const AddModal = ({ modalOpen, setModalOpen }) => {
               <InputRow>
                 <label>Old Player</label>
               </InputRow>
-              <InputRow>
-                <input
+                <Input
                   name="oldPlayer"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.oldPlayer}
                 />
-              </InputRow>
             </InputGroup>
             <InputGroup>
               <InputRow>
                 <label>New Player</label>
               </InputRow>
-              <input
+              <Input
                 name="newPlayer"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.newPlayer}
               />
             </InputGroup>
-            <InputGroup style={{ display: 'flex', justifyContent: 'center' }}>
+            <InputGroup style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <ButtonWrapper onClick={() => setModalOpen(false)} style={{ color: "#000", backgroundColor: "#efefef" }}>
+                Cancel
+              </ButtonWrapper>
               <ButtonWrapper type="submit" disabled={isSubmitting}>
                 Submit
               </ButtonWrapper>

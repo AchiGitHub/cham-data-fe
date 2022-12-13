@@ -14,3 +14,7 @@ export const Inputs = styled.div`
 export const InputGroup = styled.div`
     padding: 8px;
 `
+
+export const Input = styled.input`
+    width: 100%
+`
